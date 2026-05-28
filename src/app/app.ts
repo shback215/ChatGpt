@@ -1,12 +1,10 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { ChatComponent } from './chat'; 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [ChatComponent], // Changed from ChatService to ChatComponent
+  template: `<app-chat></app-chat>` // Fixed the broken HTML tag
 })
-export class App {
-  protected readonly title = signal('ChatGpt');
-}
+export class App {}
